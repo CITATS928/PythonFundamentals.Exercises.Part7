@@ -26,7 +26,10 @@ def print_language_options(lang_options: Dict[int, str]) -> None:
     Values are strings representing the name of a language
     :return: None
     """
-    pass  # remove pass statement and implement me
+    print("Please choose a language: ")
+    for i, str in enumerate(lang_options, start=1):
+        print(f"{i}: {lang_options.get(i)}")
+    #pass  # remove pass statement and implement me
 
 
 def language_input() -> int:
@@ -35,6 +38,8 @@ def language_input() -> int:
 
     :return: An integer representing the language choice made by the user
     """
+    user_choice = input()
+    return int(user_choice)
     pass  # remove pass statement and implement me
 
 
@@ -49,7 +54,13 @@ def language_choice_is_valid(lang_options: Dict[int, str], lang_choice: int) -> 
     :param lang_choice: An integer representing the value the user selected
     :return: A boolean representing the validity of the lang_choice
     """
-    pass  # remove pass statement and implement me
+    if(lang_choice==1 or lang_choice==2 or lang_choice==3):
+        return True
+    return False  # remove pass statement and implement me
+
+    #######
+    #return lang_choice in lang_options
+    #######
 
 
 def get_name_input(name_prompt_options: Dict[int, str], lang_choice: int) -> str:
@@ -62,6 +73,9 @@ def get_name_input(name_prompt_options: Dict[int, str], lang_choice: int) -> str
     :param lang_choice: The language the user has chosen
     :return:
     """
+    result = name_prompt_options.get(lang_choice)
+    return result
+    
     pass  # remove pass statement and implement me
 
 
@@ -72,6 +86,9 @@ def name_input(name_prompt: str) -> str:
     :param name_prompt: A string in the user's chosen language that asks them for their name
     :return: The user's response when asked for their name
     """
+    print(name_prompt)
+    result = input()
+    return result
     pass  # remove pass statement and implement me
 
 
@@ -85,6 +102,7 @@ def greet(name: str, greetings_options: Dict[int, str], lang_choice: int) -> Non
     :param lang_choice: The language the user has chosen.
     :return:
     """
+    print(f"{greetings_options.get(lang_choice)} {name}")
     pass  # remove pass statement and implement me
 
 
